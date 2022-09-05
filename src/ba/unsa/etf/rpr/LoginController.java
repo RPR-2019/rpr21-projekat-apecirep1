@@ -1,12 +1,15 @@
 package ba.unsa.etf.rpr;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 import java.io.IOException;
 
@@ -20,7 +23,12 @@ public class LoginController {
     private String pass;
     private String username;
 
-
+    @FXML
+    public void initialize() {
+        Image img = new Image("/slike/kalendar.png");
+        ImageView view = new ImageView(img);
+        slika.setGraphic(view);
+    }
 
     public void clickLogin(ActionEvent actionEvent) {
         pass = sifra.getText();
@@ -41,6 +49,8 @@ public class LoginController {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+        }else{
+
         }
     }
 }
