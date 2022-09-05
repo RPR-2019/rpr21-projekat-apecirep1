@@ -27,14 +27,17 @@ public class LoginController {
     public void initialize() {
         Image img = new Image("/slike/kalendar.png");
         ImageView view = new ImageView(img);
+        view.setFitHeight(147);
+        view.setFitWidth(186);
         slika.setGraphic(view);
     }
 
     public void clickLogin(ActionEvent actionEvent) {
         pass = sifra.getText();
         username = ime.getText();
+        String s = "admin";
 
-        if(ime.equals("admin") && pass.equals("admin")){
+        if(username.equals(s) && pass.equals(s)){
             Stage stage = new Stage();
             Parent root = null;
             try {
@@ -42,7 +45,7 @@ public class LoginController {
                 GlavniController gradController = new GlavniController();
                 loader.setController(gradController);
                 root = loader.load();
-                stage.setTitle("Grad");
+                stage.setTitle("Options");
                 stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
                 stage.setResizable(true);
                 stage.show();
