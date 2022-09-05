@@ -23,4 +23,5 @@ public class PretraziController {
         view1.setFitWidth(51);
         nadji.setGraphic(view1);
     }
+
 }
