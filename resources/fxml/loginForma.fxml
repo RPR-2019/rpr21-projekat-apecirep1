@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -44,12 +45,12 @@
          </GridPane.margin>
       </Label>
       <TextField fx:id="ime" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-      <TextField fx:id="sifra" GridPane.columnIndex="1" GridPane.rowIndex="2" />
       <Button fx:id="prijava" mnemonicParsing="false" onAction="#clickLogin" text="Login" GridPane.columnIndex="3" GridPane.rowIndex="4" />
       <Button fx:id="slika" mnemonicParsing="false" prefHeight="147.0" prefWidth="186.0" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="1" GridPane.rowSpan="3">
          <GridPane.margin>
             <Insets left="40.0" />
          </GridPane.margin>
       </Button>
+      <PasswordField fx:id="sifra" GridPane.columnIndex="1" GridPane.rowIndex="2" />
    </children>
 </GridPane>

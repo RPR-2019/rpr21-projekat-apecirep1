@@ -67,46 +67,55 @@ public class ProjekatDao {
 
     }
 
-    public ArrayList<Zadatak> dajPoNazivu() {
+    public ArrayList<Zadatak> dajPoNazivu(String naziv) {
         ArrayList<Zadatak> rezultat = new ArrayList();
         try {
+            dajTaskovePoNazivu.setString(1, naziv);
             ResultSet rs = dajTaskovePoNazivu.executeQuery();
             while (rs.next()) {
                 Zadatak zadatak = dajTaskIzResultSeta(rs);
                 rezultat.add(zadatak);
             }
+            return rezultat;
         } catch (SQLException e) {
             e.printStackTrace();
+            return null;
         }
-        return rezultat;
+
     }
 
-    public ArrayList<Zadatak> dajPoDatumu() {
+    public ArrayList<Zadatak> dajPoDatumu(String datum) {
         ArrayList<Zadatak> rezultat = new ArrayList();
         try {
+            dajTaskovePoDatumu.setString(2, datum);
             ResultSet rs = dajTaskovePoDatumu.executeQuery();
             while (rs.next()) {
                 Zadatak zadatak = dajTaskIzResultSeta(rs);
                 rezultat.add(zadatak);
             }
+            return rezultat;
         } catch (SQLException e) {
             e.printStackTrace();
+            return null;
         }
-        return rezultat;
+
     }
 
     public ArrayList<Zadatak> dajBitne() {
         ArrayList<Zadatak> rezultat = new ArrayList();
         try {
+
             ResultSet rs = dajBitneTaskove.executeQuery();
             while (rs.next()) {
                 Zadatak zadatak = dajTaskIzResultSeta(rs);
                 rezultat.add(zadatak);
             }
+            return rezultat;
         } catch (SQLException e) {
             e.printStackTrace();
+            return null;
         }
-        return rezultat;
+
     }
 
     public ArrayList<Zadatak> dajSve() {

@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.scene.image.Image;
@@ -17,9 +18,9 @@ import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 
 public class LoginController {
     public TextField ime;
-    public TextField sifra;
     public Button prijava;
     public Button slika;
+    public PasswordField sifra;
     private String pass;
     private String username;
 
