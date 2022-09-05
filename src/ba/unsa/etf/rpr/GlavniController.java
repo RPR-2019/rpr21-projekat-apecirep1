@@ -64,6 +64,7 @@ public class GlavniController {
     }
 
     public void clickDodaj(ActionEvent actionEvent) {
+        System.out.println("radi");
         Stage stage = new Stage();
         Parent root = null;
         try {
@@ -73,7 +74,7 @@ public class GlavniController {
             root = loader.load();
             stage.setTitle("Add");
             stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
-            stage.setResizable(true);
+            stage.setResizable(false);
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();
@@ -90,7 +91,7 @@ public class GlavniController {
             root = loader.load();
             stage.setTitle("Search");
             stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
-            stage.setResizable(true);
+            stage.setResizable(false);
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();
@@ -107,7 +108,7 @@ public class GlavniController {
             root = loader.load();
             stage.setTitle("Search by date");
             stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
-            stage.setResizable(true);
+            stage.setResizable(false);
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();
@@ -124,7 +125,7 @@ public class GlavniController {
             root = loader.load();
             stage.setTitle("Important tasks");
             stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
-            stage.setResizable(true);
+            stage.setResizable(false);
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();
