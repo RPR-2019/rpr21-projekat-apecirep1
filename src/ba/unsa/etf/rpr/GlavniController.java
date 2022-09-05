@@ -6,11 +6,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 
@@ -21,13 +23,16 @@ public class GlavniController {
     public Button podatumu;
     public Button bitni;
     public Button broj;
+    public TextField fldBroj;
     public Button slika1;
     public Button slika2;
     public Button slika3;
     public Button slika4;
     public Button slika5;
+    private ProjekatDao dao;
 
     public GlavniController() {
+        dao = ProjekatDao.getInstance();
     }
 
     @FXML
@@ -133,7 +138,14 @@ public class GlavniController {
     }
 
     public void clickBroj(ActionEvent actionEvent) {
+        ArrayList<Zadatak> rez = new ArrayList<>();
+        rez = dao.dajSve();
+        Integer brojac = 0;
+        for(Zadatak z : rez){
+            brojac++;
+        }
 
+        fldBroj.setText(brojac.toString());
     }
 
 }
